@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albero Genealogico</title>
+    <style>
+        /* Stili per l'albero genealogico */
+        .tree {
+            display: flex;
+            justify-content: center;
+        }
+        .generation {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .person {
+            border: 2px solid #333;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+            position: relative;
+        }
+        .arrow {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 20px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="tree">
+        <div class="generation">
+            <div class="person">Nonno</div>
+        </div>
+        <div class="generation">
+            <div class="person">Padre<div class="arrow"></div></div>
+            <div class="person">Madre<div class="arrow"></div></div>
+        </div>
+        <div class="generation">
+            <div class="person">Tu<div class="arrow"></div></div>
+            <div class="person">Fratello/Sorella<div class="arrow"></div></div>
+            <div class="person">Cugino/Cugina<div class="arrow"></div></div>
+        </div>
+        <div class="generation">
+            <div class="person">Figlio/Figlia<div class="arrow"></div></div>
+            <div class="person">Nipote<div class="arrow"></div></div>
+            <div class="person">Altro parente<div class="arrow"></div></div>
+        </div>
+        <div class="generation">
+            <div class="person">Bisnipote<div class="arrow"></div></div>
+            <div class="person">Altro parente<div class="arrow"></div></div>
+        </div>
+    </div>
+
+    <script>
+        // Logica JavaScript per evidenziare le relazioni
+        const persons = document.querySelectorAll('.person');
+        persons.forEach((person, index) => {
+            if (index > 0) {
+                const arrow = person.querySelector('.arrow');
+                const parent = persons[index - 1];
+                arrow.style.left = `${parent.offsetLeft - person.offsetLeft + parent.offsetWidth / 2}px`;
+            }
+        });
+    </script>
+</body>
+</html>

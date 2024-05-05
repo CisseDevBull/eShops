@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albero Genealogico</title>
+    <style>
+        /* Stili CSS per l'albero genealogico */
+        .family-tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #002366; /* Sfondo blu scuro */
+            color: white;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .member {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .line {
+            width: 2px;
+            height: 30px;
+            background-color: white;
+        }
+        .icon {
+            margin: 5px;
+        }
+        /* Aggiungi altri stili qui */
+    </style>
+</head>
+<body>
+    <div class="family-tree">
+        <!-- Membri della famiglia -->
+        <div class="member">Jaculy</div>
+        <div class="line"></div>
+        <div class="icon">&#9881;</div> <!-- Icona ingranaggio -->
+        <!-- Aggiungi altri membri e icone qui -->
+    </div>
+
+    <script>
+        // Logiche JavaScript per interattività
+        document.querySelectorAll('.member').forEach(member => {
+            member.addEventListener('click', function() {
+                alert('Hai cliccato su ' + this.textContent);
+            });
+        });
+        // Aggiungi altre logiche qui
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albero Genealogico</title>
+    <style>
+        /* Stili per l'albero genealogico */
+        .tree {
+            display: flex;
+            justify-content: center;
+        
+        }
+        .generation {
+            display: inline-block;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .person1, .person2, .person3, .person4, .person5 {
+            border: 2px solid #333;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+        }
+        .person1:hover{
+            background-color: aqua;
+        }
+        .person2:hover{
+            background-color: rgb(255, 0, 174);
+        }
+        .person3:hover{
+            background-color: rgb(145, 255, 0);
+        }
+        .person4:hover::after{
+            color: red;
+            content: "fils";
+            font-size: xx-large;
+            
+        }
+        .person5:hover::after{
+            content:"Petit fils";
+            position: absolute;
+        
+            background-color: blue;
+        
+            
+        }
+
+
+        .my-class:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="tree">
+        <div class="generation">
+            <div class="person1">Soxna Diop</div>
+            <div class="person1">Birane Cisse</div>
+            <div class="person1">Mor Cisse</div>
+            <div class="person1">Fama Niang Seck</div>
+        </div>
+        <div class="generation">
+            <div class="person2">Mactar Cisse</div>
+            <div class="person2">Aminata Cisse</div>
+        </div>
+        <div class="generation">
+            <div class="person3">Ibrahima Cisse</div>
+            <div class="person3">Kine Cisse</div>
+            <div class="person3">Cheikh Cisse</div>
+            <div class="person3">Bintou Cisse</div>
+            <div class="person3">Fratello/Sorella</div>
+            <div class="person3">Fratello/Sorella</div>
+            <div class="person3">Cugino/Cugina</div>
+        </div>
+        <div class="generation">
+            <div class="person4">Mame Ndiaye</div>
+            <div class="person4">Medoune Ndiaye</div>
+            <div class="person4">Ndeye Amy Ndiaye</div>
+            <div class="person4">Mactar Diop</div>
+            <div class="person4">Mouhamed Cisse</div>
+            <div class="person4">Aminata Cisse</div>
+            <div class="person4">MaDiama Cisse</div>
+            <div class="person4">Omar Cisse</div>
+            <div class="person4">Pap Matar Diop</div>
+            <div class="person4">Altro parente</div>
+        </div>
+        <div class="generation">
+            <div class="person5">Maimouna Faye</div>
+            <div class="person5">Soxna Astou Faye</div>
+            <div class="person5">Bisnipote</div>
+            <div class="person5">Bisnipote</div>
+            <div class="person5">Bisnipote</div>
+            <div class="person5">Altro parente</div>
+        </div>
+    </div>
+
+    <script>
+        // Aggiungi eventuali logiche o interazioni JavaScript qui
+    </script>
+</body>
+</html>

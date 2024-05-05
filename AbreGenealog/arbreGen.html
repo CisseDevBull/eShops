@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Albero Genealogico</title>
+<style>
+  .albero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .persona {
+    border: 1px solid #000;
+    margin: 10px;
+    padding: 5px;
+    width: 120px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="albero" id="alberoGenealogico">
+  <!-- Qui verranno aggiunti gli elementi dell'albero genealogico -->
+</div>
+
+<script>
+  // Dati dell'albero genealogico<
+  var famiglia = [
+    { id: 1, nome: 'Birane Cisse', genitoreId: null },
+    { id: 2, nome: 'Soxna Diop', genitoreId: null },
+    { id: 3, nome: 'Mactar Cisse', genitoreId: 1 },
+    { id: 4, nome: 'Aminata Cisse', genitoreId: 2 },
+    { id: 5, nome: 'Ibrahima Cisse', genitoreId: 3 },
+    { id: 6, nome: 'Kine Cisse', genitoreId: 4 },
+    { id: 5, nome: 'Cheikh Cisse', genitoreId: 5 },
+    { id: 6, nome: 'Bintou Cisse', genitoreId: 6 }
+  ];
+
+  // Funzione per costruire l'albero
+  function costruisciAlbero() {
+    var albero = document.getElementById('alberoGenealogico');
+    famiglia.forEach(function(persona) {
+      var div = document.createElement('div');
+      div.className = 'persona';
+      div.innerHTML = persona.nome;
+      albero.appendChild(div);
+    });
+  }
+
+  // Costruisci l'albero al caricamento della pagina
+  window.onload = costruisciAlbero;
+</script>
+
+</body>
+</html>
